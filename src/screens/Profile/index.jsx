@@ -1,54 +1,41 @@
-import React from "react";
-import { View, Text, ImageBase, Image} from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
-import Title from "../../components/Title";
-import TouchButton from "../../components/TouchButton";
 
+export default function Profile() {
+  const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default function Profile({ route }) {
-  const { data } = route.params;
-  //console.log(`dados do objeto`,data);
-  const {image, nickname, email, date, phone, arroba} = data
+  const handleLogin = () => {
+    console.log("Email:", email);
+    console.log("Senha:", password);
+    navigation.navigate("Home", { email });
+  };
 
   return (
     <View style={styles.container}>
-     <View style={styles.header}>
-        <View style={styles.user}>
-          <View style={styles.userInfo}>
-            <Image 
-              style={styles.img}
-              source={{
-                uri: `${image}`
-              }}
-          />
-          </View>
-
-          <View style={styles.userInfo}>
-            <Text style={styles.name}>{nickname}</Text>
-          </View>
-        </View>
-          <View style={styles.userData}>
-            <View style={styles.coluna}>
-              <View style={styles.userInfo}>
-                <Text style={styles.info}>{email}</Text>
-              </View>
-        
-              <View style={styles.userInfo}>
-                <Text style={styles.info}>{phone}</Text>
-              </View>
-            </View>
-            <View style={styles.coluna2}>
-              <View style={styles.userInfo}>
-                <Text style={styles.info}>{date}</Text>
-              </View> 
-
-              <View style={styles.userInfo}>
-                <Text style={styles.info}>{arroba}</Text>
-              </View>
-            </View>
-            
-          </View>
-      </View>
+      <Text style={styles.title}>bem vindo a green socyte</Text>
+      <Text style={styles.title}>Login</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+        keyboardType="email-address"
+        autoCapitalize="none"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        onChangeText={(text) => setPassword(text)}
+        value={password}
+        secureTextEntry={true}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 }

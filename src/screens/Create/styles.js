@@ -1,86 +1,42 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
-    backgroundColor: '#69B752',
-    paddingTop: 50,
-    justifyContent: 'flex-start', 
-  },
-  image: {
-    width: 200,
-    height: 200,
-    marginBottom: 10,
-    alignSelf: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#87CEEB", // Cor de fundo azul celeste
   },
   title: {
     fontSize: 24,
-    fontFamily: 'Jomolhari',
+    fontWeight: "bold",
     marginBottom: 20,
-    textDecorationLine: 'underline',
-    textDecorationColor: '#000000',
-    textDecorationThickness: '1px', 
-    alignSelf: 'center',
-    color : '#FFFDFD',
-  },
-  subContainer: {
-    height: '60%', 
-    marginLeft: 20, 
-    marginRight: 20, 
-    backgroundColor: '#F5F5DC',
-  },
-  largeInput: {
-    height: 150,
-    width: '90%',
-    marginLeft: 20,
-    borderColor: 'gray',
-    borderWidth: 0, 
-    marginBottom: 10,
-    paddingLeft: 8,
-    backgroundColor: 'white',
+    color: "#006400", // Cor do título verde escuro
   },
   input: {
-    height: 40,
-    width: '90%',
-    marginLeft: 20,
-    borderColor: 'gray',
-    borderWidth: 0, 
-    marginBottom: 10,
-    paddingLeft: 8,
-    backgroundColor: 'white',
+    width: "80%",
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#228B22", // Cor da borda verde floresta
+    borderRadius: 10,
+    marginBottom: 15,
+    padding: 10,
+    backgroundColor: "#F0FFF0", // Cor de fundo branca menta
   },
   button: {
-    height: 30, 
-    width: 100, 
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#69B752',
-    marginLeft: 120, 
-    marginRight: 120, 
+    width: "80%",
+    height: 50,
+    backgroundColor: "#32CD32", // Cor do botão verde limão
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    marginTop: 20,
   },
   buttonText: {
-    color: 'white', 
-  },
-  label: {
     fontSize: 18,
-    fontFamily: 'Jomolhari',
-    fontWeight: 'bold',
-    marginBottom: 5,
+    fontWeight: "bold",
+    color: "#FFF", // Cor do texto branco
   },
-  buttonContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  label: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    marginLeft: 20, 
-  },
-  confirmationText: {
-    color: 'green',
-    textAlign: 'center',
-    marginTop: 10,
-  }
 });
+
+export default styles;

@@ -1,15 +1,15 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
-
 import Home from "../screens/Home";
 import Profile from "../screens/Profile";
-import Form from "../screens/Form";
 import Post from "../screens/Post";
 import Create from "../screens/Create";
 import { user } from "../data/Profile";
 import postList from "../models/Postagem/PostsList";
 
-const posts = postList.getAll()
+
+const posts = postList.getAll();
 const Tab = createBottomTabNavigator();
 
 const TabRoutes = () => {
@@ -27,7 +27,7 @@ const TabRoutes = () => {
               color={focused ? "#131313" : "#D6D6D6"}
             />
           ),
-          tabBarLabel: "Profile",
+          tabBarLabel: "login",
           tabBarActiveTintColor: "#131313",
           tabBarInactiveTintColor: "#D6D6D6",
         }}
@@ -49,22 +49,6 @@ const TabRoutes = () => {
         }}
       />
       <Tab.Screen
-        name="Form"
-        component={Form}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Feather
-              name="log-in"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          tabBarLabel: "Form",
-          tabBarActiveTintColor: "#131313",
-          tabBarInactiveTintColor: "#D6D6D6",
-        }}
-      />
-  <Tab.Screen
         name="Post"
         component={Post}
         options={{
@@ -83,7 +67,7 @@ const TabRoutes = () => {
       <Tab.Screen
         name="Create"
         component={Create}
-        initialParams={{post: null}}
+        initialParams={{ post: null }}
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather

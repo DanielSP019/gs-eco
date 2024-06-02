@@ -1,29 +1,35 @@
 import { StyleSheet } from "react-native";
-import { user } from "../../data/Profile";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#87CEEB",
+    color: "#006400",
   },
-  input: {
-    width: "80%",
-    height: 40,
+  textContainer: {
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
+    borderColor: "#006400",
+    padding: 10,
     marginBottom: 20,
-    paddingLeft: 10,
+    backgroundColor: "beige",
   },
-  button: {
-    width: "80%",
-    height: 40,
-    backgroundColor: "#007bff",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    marginTop: 20,
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#006400",
+    marginBottom: 5,
+  },
+  text: {
+    fontSize: 18,
+    color: "#006400",
+  },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 10,
   },
 });
+
+export default styles;

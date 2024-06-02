@@ -5,20 +5,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  button: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: "#C9D4FF",
-    borderRadius: 5,
+    backgroundColor: "#87CEEB", 
   },
   user: {
     marginTop: 20,
-    padding: 10,
-    backgroundColor: "#C9D4FF",
-    borderRadius: 5,
+    backgroundColor: "#F0FFF0", 
+    padding: 20,
+    borderRadius: 10,
   },
   text: {
     fontSize: 16,
+    marginBottom: 5,
+    color: "#006400", 
   },
 });
+
+export default styles;
