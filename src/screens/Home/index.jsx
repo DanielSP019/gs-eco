@@ -5,7 +5,7 @@ import styles from "./styles";
 
 export default function Home() {
   const route = useRoute();
-  const { email } = route.params;
+  const { email } = route.params || {};
 
   return (
     <View style={styles.container}>
@@ -17,7 +17,7 @@ export default function Home() {
       </View>
       <Text style={styles.text}>Nosso app foi feito para você compartilhar seu dia verde e sustentável. Seja bem-vindo(a) e, principalmente, seja verde e sustentável.</Text>
       <Text style={styles.text}>Email:</Text>
-      <Text style={styles.email}>{email}</Text>
+      <Text style={styles.email}>{email ? email : "Email não fornecido"}</Text>
     </View>
   );
 }
